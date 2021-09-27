@@ -23,7 +23,8 @@ type <code>npm install</code>
 
 ## Servidor de desarrollo
 
-Run `ng serve` para un servidor de desarrollo. Navegar a `http://localhost:4200/`. La aplicación se recargará automáticamente si cambia alguno de los archivos de origen.
+Run `ng serve` para un servidor de desarrollo. Navegar a `http://localhost:4200/`.
+La aplicación se recargará automáticamente si cambia alguno de los archivos de origen.
 
 
 ## Acerca del sistema
