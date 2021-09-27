@@ -1,0 +1,14 @@
+<!-- Existe sesión activa -->
+<div *ngIf="this.isLoggedIn; else offline">
+  <app-nav></app-nav>
+  <div class="container-body">
+    <div class="body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<!-- No existe sesión activa -->
+<ng-template #offline>
+  <router-outlet></router-outlet>
+</ng-template>

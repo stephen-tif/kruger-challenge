@@ -1,0 +1,46 @@
+.containerBody {
+  width: 100%;
+  height: 100%;
+}
+
+.container-titule {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5%;
+  margin-top: 20px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #002d57;
+}
+
+.containerTable {
+  padding: 20px;
+}
+
+.headerTable {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
+.ant-btn-round.ant-btn-lg {
+  display: flex;
+  align-items: center;
+}
+
+.formGroup {
+  margin-top: 10px;
+}
+
+.anticon {
+  cursor: pointer;
+  font-size: 20px;
+}

@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <!-- Container Body -->
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+
+      <!-- Header -->
+      <div class="fadeIn first">
+        <h2 class="p-4 text-muted">Inicio de sesión</h2>
+      </div>
+
+      <!-- Formulario -->
+      <form [formGroup]="loginForm">
+        <input
+          type="text"
+          id="login"
+          class="fadeIn second"
+          formControlName="user"
+          placeholder="Usuario"
+        />
+        <input
+          type="password"
+          id="password"
+          class="fadeIn third"
+          formControlName="pass"
+          placeholder="Contraseña"
+        />
+        <input
+          type="submit"
+          class="fadeIn fourth"
+          value="Log In"
+          (click)="login()"
+        />
+      </form>
+
+      <!-- copyright -->
+      <div id="formFooter">
+        <a
+          class="underlineHover"
+          href="https://www.linkedin.com/in/stephen-mel%C3%A9ndez-1ab659199"
+          target="_blank"
+        >
+          © 2021 Copyright Stephen Meléndez
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

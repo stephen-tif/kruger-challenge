@@ -1,0 +1,162 @@
+<div class="containerBody">
+  <div class="container-titule">
+    <span class="title">Empleados</span>
+  </div>
+  <div class="headerTable">
+    <button
+      nz-button
+      nzType="primary"
+      [nzSize]="size"
+      nzShape="round"
+      (click)="this.showModal = true"
+    >
+      <i nz-icon nzType="user-add" nzTheme="outline"></i>
+      Agregar
+    </button>
+  </div>
+  <div class="containerTable">
+    <!-- Filtros-->
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link"
+              data-toggle="collapse"
+              data-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              Filtros
+            </button>
+          </h5>
+        </div>
+        <div
+          id="collapseOne"
+          class="collapse"
+          aria-labelledby="headingOne"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            <!--formulario-->
+            <form [formGroup]="filtrosForm" class="row">
+              <div class="col-md-4">
+                <div class="formGroup">
+                  <label>Tipo de vacuna:</label>
+                  <nz-select ngModel="tipoVacuna" style="width: 100%" formControlName="tipoVacuna">
+                    <nz-option nzValue="Sputnik" nzLabel="Sputnik"></nz-option>
+                    <nz-option
+                      nzValue="AstraZeneca"
+                      nzLabel="AstraZeneca"
+                    ></nz-option>
+                    <nz-option nzValue="Pfizer" nzLabel="Pfizer"></nz-option>
+                    <nz-option
+                      nzValue="Jhonson&Jhonson"
+                      nzLabel="Jhonson&Jhonson"
+                    ></nz-option>
+                  </nz-select>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="formGroup">
+                  <label>Fecha de vacunación</label>
+                  <nz-date-picker style="width: 100%" formControlName="fechaVacuna"></nz-date-picker>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="formGroup">
+                  <label>N. dosis: </label>
+                  <nz-input-number
+                    [nzMin]="1"
+                    [nzMax]="10"
+                    [nzStep]="1"
+                    style="width: 100%"
+                    formControlName="numDosis"
+                  ></nz-input-number>
+                </div>
+              </div>
+            </form>
+            <!--fin formulario-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Listar datos-->
+    <nz-table #dataEmpleado [nzData]="dataEmpleados">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Correo Electrónico</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of dataEmpleado.data">
+          <td>{{ data.id }}</td>
+          <td>{{ data.nombre }}</td>
+          <td>{{ data.apellido }}</td>
+          <td>{{ data.correo }}</td>
+          <td>
+            <i
+              nz-icon
+              nzType="edit"
+              nzTheme="twotone"
+              class="anticon mx-3"
+              (click)="edit(data)"
+            ></i>
+            <i
+              nz-icon
+              nzType="delete"
+              nzTheme="twotone"
+              class="anticon"
+              (click)="deleteRecord(data)"
+            ></i>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>
+
+<nz-modal
+  [(nzVisible)]="showModal"
+  [nzTitle]="(isEdit ? 'Editar' : 'Agregar') + ' Empleado'"
+  (nzOnCancel)="this.showModal = false"
+  (nzOnOk)="!isEdit ? validForm() : editRecord()"
+>
+  <ng-container *nzModalContent>
+    <form [formGroup]="empleadoForm">
+      <div class="formGroup">
+        <label>Cédula</label>
+        <input
+          nz-input
+          placeholder="Ingrese Número Cédula"
+          formControlName="id"
+        />
+      </div>
+      <div class="formGroup">
+        <label>Nombre</label>
+        <input nz-input placeholder="Ingrese Nombre" formControlName="nombre" />
+      </div>
+      <div class="formGroup">
+        <label>Apellido</label>
+        <input
+          nz-input
+          placeholder="Ingrese Apellido"
+          formControlName="apellido"
+        />
+      </div>
+      <div class="formGroup">
+        <label>Correo Electrónico</label>
+        <input
+          nz-input
+          placeholder="Ingres Correo Electrónico"
+          formControlName="correo"
+        />
+      </div>
+    </form>
+  </ng-container>
+</nz-modal>

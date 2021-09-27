@@ -1,0 +1,24 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  --height-nav: 68px;
+}
+
+.container-body {
+  background-color: #f0f2f5;
+  width: 100%;
+  height: calc(100vh - var(--height-nav));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body {
+  background-color: #fff;
+  width: 95%;
+  height: 95%;
+  box-shadow: 0 2px 5px rgb(0 48 136 / 20%);
+}
