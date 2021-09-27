@@ -1,27 +1,31 @@
-# Kruger
+# Kruger challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
+Kruger Corporation requiere una aplicación para llevar un registro del inventario del estado de vacunación
+de los empleados, por lo tanto se realizo un inicio de sesion con un usuario administrador quien sera el encargado
+de registrar a los empleados de la empresa, a su vez el registro de empleados realiza el usuario y contraseña que se
+asignara al empleado, donde el posteriormente podra ingresar y registrar sus datos de vacunacion.
 
-## Development server
+## Credenciales de administrador
+<strong>User: </strong> admin
+<br>
+<strong>Password: </strong> admin
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Git clone
+git clone https://github.com/stephen-tif/kruger-challenge.git
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Instalando dependendencias con node js
+<em>#cd in your project directory</em>
+<br>
+type <code>npm install</code>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Servidor de desarrollo
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng serve` para un servidor de desarrollo. Navegar a `http://localhost:4200/`. La aplicación se recargará automáticamente si cambia alguno de los archivos de origen.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Acerca del sistema
+El sistema esta desarrollado haciendo uso de una fakeApi la cual es almacenada en el web storage del navegador que se este utilizando esto con el fin de simular el proceso real que una aplicacion hace al hacer uso de una Api back-end, tambien se hizo uso del framework bootstrap y la libreria ng zorro.
+Este sistema fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
